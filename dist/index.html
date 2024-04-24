@@ -4,9 +4,108 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script defer src="main.js"></script>
-    <title>Test</title>
+    <title>Weather app</title>
   </head>
   <body>
-    <div class="content"></div>
+    <div class="content">
+      <header>
+        <img src="" alt="">
+        <div class="search">
+          <input type="text" class="search-bar" placeholder="Search locations" />
+        </div>
+        <div class="unit-switch">
+          <button class="celsius">Celsius</button>
+          <button class="fahrenheit">Fahrenheit</button>
+        </div>
+      </header>
+      <main>
+        <div class="location">
+          <h1 class="location-name">Current location</h1>
+          <h2 class="current-date">Current date</h2>
+        </div>
+        <div class="current-weather">
+          <div class="general-info">
+            <div class="temperature">
+              <img src="" alt="">
+              <h2 class="temp-value">22°C</h2>
+            </div>
+            <div class="additional-info">
+              <div class="weather-description">
+                <h2 class="weather-type">Scattered Clouds</h2>
+              </div>
+              <div class="feels-like">
+                <p class="feels-like-temp">Feels like 22°C</p>
+              </div>
+              <div class="wind-info">
+                <p class="wind-speed">Gentle breeze</p>
+              </div>
+            </div>
+          </div>
+          <div class="specific">
+            <div class="wind-speed">4km/h</div>
+            <div class="humidity">54%</div>
+            <div class="uv-index"></div>
+            <div class="visibility"></div>
+            <div class="cloudiness"></div>
+            <div class="rain-chance"></div>
+          </div>
+        </div>
+        <div class="forecast">
+          <h2>Weekly Forecast</h2>
+          <div class="week-days">
+            <div class="day">
+              <h3 class="day-name">Monday</h3>
+              <div class="day-weather">
+                <img src="" alt="">
+                <p class="day-temp">22°C</p>
+              </div>
+            </div>
+            <div class="day">
+              <h3 class="day-name">Tuesday</h3>
+              <div class="day-weather">
+                <img src="" alt="">
+                <p class="day-temp">23°C</p>
+              </div>
+            </div>
+            <div class="day">
+              <h3 class="day-name">Wednesday</h3>
+              <div class="day-weather">
+                <img src="" alt="">
+                <p class="day-temp">20°C</p>
+              </div>
+            </div>
+            <div class="day">
+              <h3 class="day-name">Thursday</h3>
+              <div class="day-weather">
+                <img src="" alt="">
+                <p class="day-temp">25°C</p>
+              </div>
+            </div>
+            <div class="day">
+              <h3 class="day-name">Friday</h3>
+              <div class="day-weather">
+                <img src="" alt="">
+                <p class="day-temp">24°C</p>
+              </div>
+            </div>
+            <div class="day">
+              <h3 class="day-name">Saturday</h3>
+              <div class="day-weather">
+                <img src="" alt="">
+                <p class="day-temp">22°C</p>
+              </div>
+            </div>
+            <div class="day">
+              <h3 class="day-name">Sunday</h3>
+              <div class="day-weather">
+                <img src="" alt="">
+                <p class="day-temp">21°C</p>
+              </div>
+            </div>
+          </div>
+        </div>        
+      </main>
+      <footer>Build by Lucas-AVS</footer>
+    </div>
   </body>
 </html>
