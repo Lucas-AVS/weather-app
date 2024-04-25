@@ -110,13 +110,33 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
 
 /***/ }),
 
+/***/ "./src/components/api.js":
+/*!*******************************!*\
+  !*** ./src/components/api.js ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   api: () => (/* binding */ api)\n/* harmony export */ });\n/* harmony import */ var _keys_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./keys.json */ \"./src/components/keys.json\");\n\n\n//   const currentLocation = document.querySelector(\".location-name\");\nconst currentLocation = \"brasília\";\n\nasync function api() {\n  try {\n    const response = await fetch(\n      `http://api.weatherapi.com/v1/current.json?key=${_keys_json__WEBPACK_IMPORTED_MODULE_0__.key}&q=${currentLocation}&aqi=yes`\n    );\n    const data = await response.json();\n    const weatherCondition = data.current.condition.text;\n    return { data, weatherCondition };\n  } catch (error) {\n    console.error(\"Error:\", error);\n    throw error;\n  }\n}\n\n\n//# sourceURL=webpack://super-todo-list/./src/components/api.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n\n\nconst content = document.querySelector(\".content\");\n\nconst test = document.createElement(\"h1\");\ntest.textContent = \"This is a test\";\n\ncontent.appendChild(test);\n\n\n//# sourceURL=webpack://super-todo-list/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _components_api__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/api */ \"./src/components/api.js\");\n\n\n\n// Object to store all html elements\nconst elements = {\n  locationName: document.querySelector(\".location-name\"),\n  currentDate: document.querySelector(\".current-date\"),\n  tempValue: document.querySelector(\".temp-value\"),\n  weatherType: document.querySelector(\".weather-type\"),\n  feelsLikeTemp: document.querySelector(\".feels-like-temp\"),\n  windSpeed: document.querySelector(\".wind-speed\"),\n  windSpeedSpecific: document.querySelector(\".specific .wind-speed\"),\n  humidity: document.querySelector(\".specific .humidity\"),\n  uvIndex: document.querySelector(\".specific .uv-index\"),\n  visibility: document.querySelector(\".specific .visibility\"),\n  cloudiness: document.querySelector(\".specific .cloudiness\"),\n  rainChance: document.querySelector(\".specific .rain-chance\"),\n  weekDays: document.querySelectorAll(\".day\"),\n};\n\n(0,_components_api__WEBPACK_IMPORTED_MODULE_1__.api)().then(({ data, weatherCondition }) => {\n  console.log(data);\n  console.log(\"Weather Condition:\", weatherCondition);\n\n  // Update the UI with the fetched data\n  elements.locationName.textContent = data.location.name;\n  elements.currentDate.textContent = data.location.localtime;\n  elements.tempValue.textContent = data.current.temp_c + \"°C\";\n  elements.weatherType.textContent = data.current.condition.text;\n  elements.feelsLikeTemp.textContent =\n    \"Feels like \" + data.current.feelslike_c + \"°C\";\n  elements.windSpeed.textContent = data.current.wind_kph + \"km/h\";\n  elements.windSpeedSpecific.textContent = data.current.wind_kph + \"km/h\";\n  elements.humidity.textContent = data.current.humidity + \"%\";\n  elements.uvIndex.textContent = data.current.uv;\n  elements.visibility.textContent = data.current.vis_km + \"km\";\n  elements.cloudiness.textContent = data.current.cloud + \"%\";\n  elements.rainChance.textContent = data.current.precip_mm + \"mm\";\n});\n\n\n//# sourceURL=webpack://super-todo-list/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/components/keys.json":
+/*!**********************************!*\
+  !*** ./src/components/keys.json ***!
+  \**********************************/
+/***/ ((module) => {
+
+eval("module.exports = /*#__PURE__*/JSON.parse('{\"key\":\"f98e3a2db9ff491b856181517242404\"}');\n\n//# sourceURL=webpack://super-todo-list/./src/components/keys.json?");
 
 /***/ })
 
