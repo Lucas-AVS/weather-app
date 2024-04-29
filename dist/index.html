@@ -9,9 +9,13 @@
   <body>
     <div class="content">
       <header>
-        <img src="" alt="">
+        <img src="" alt="" />
         <div class="search">
-          <input type="text" class="search-bar" placeholder="Search locations" />
+          <input
+            type="text"
+            class="search-bar"
+            placeholder="Search locations"
+          />
         </div>
         <div class="unit-switch">
           <button class="celsius">Celsius</button>
@@ -26,7 +30,7 @@
         <div class="current-weather">
           <div class="general-info">
             <div class="temperature">
-              <img src="" alt="">
+              <img src="" alt="" />
               <h2 class="temp-value">22°C</h2>
             </div>
             <div class="additional-info">
@@ -42,68 +46,110 @@
             </div>
           </div>
           <div class="specific">
-            <div class="wind-speed">4km/h</div>
-            <div class="humidity">54%</div>
-            <div class="uv-index"></div>
-            <div class="visibility"></div>
-            <div class="cloudiness"></div>
-            <div class="rain-chance"></div>
+            <div class="wind-speed">
+              <div class="wind-direction">
+                <i class="fas fa-long-arrow-up"></i>
+                <p>Wind</p>
+              </div>
+              <h2>4km/h</h2>
+            </div>
+            <div class="humidity">
+              <p>Humidity</p>
+              <h2>54%</h2>
+            </div>
+            <div class="uv-index">
+              <p>UV index</p>
+              <h2></h2>
+            </div>
+            <div class="visibility">
+              <p>Visibility</p>
+              <h2></h2>
+            </div>
+            <div class="cloudiness">
+              <p>Cloudiness</p>
+              <h2></h2>
+            </div>
+            <div class="rain-chance">
+              <p>Chance of rain</p>
+              <h2></h2>
+            </div>
           </div>
         </div>
         <div class="forecast">
           <h2>Weekly Forecast</h2>
-          <div class="week-days">
+          <div class="daily-forecast">
             <div class="day">
-              <h3 class="day-name">Monday</h3>
-              <div class="day-weather">
-                <img src="" alt="">
-                <p class="day-temp">22°C</p>
+              <div class="day-info">
+                <img class="day-icon" src="" alt="" />
+                <h3 class="day-name">Monday</h3>
+              </div>
+              <div class="day-temperature">
+                <p class="max-temperature"><span>Max</span> 22°C</p>
+                <p class="min-temperature"><span>Min</span> 18°C</p>
               </div>
             </div>
             <div class="day">
-              <h3 class="day-name">Tuesday</h3>
-              <div class="day-weather">
-                <img src="" alt="">
-                <p class="day-temp">23°C</p>
+              <div class="day-info">
+                <img class="day-icon" src="" alt="" />
+                <h3 class="day-name">Tuesday</h3>
+              </div>
+              <div class="day-temperature">
+                <p class="max-temperature"><span>Max</span> 20°C</p>
+                <p class="min-temperature"><span>Min</span> 15°C</p>
               </div>
             </div>
             <div class="day">
-              <h3 class="day-name">Wednesday</h3>
-              <div class="day-weather">
-                <img src="" alt="">
-                <p class="day-temp">20°C</p>
+              <div class="day-info">
+                <img class="day-icon" src="" alt="" />
+                <h3 class="day-name">Wednesday</h3>
+              </div>
+              <div class="day-temperature">
+                <p class="max-temperature"><span>Max</span> 24°C</p>
+                <p class="min-temperature"><span>Min</span> 17°C</p>
               </div>
             </div>
             <div class="day">
-              <h3 class="day-name">Thursday</h3>
-              <div class="day-weather">
-                <img src="" alt="">
-                <p class="day-temp">25°C</p>
+              <div class="day-info">
+                <img class="day-icon" src="" alt="" />
+                <h3 class="day-name">Thursday</h3>
+              </div>
+              <div class="day-temperature">
+                <p class="max-temperature"><span>Max</span> 23°C</p>
+                <p class="min-temperature"><span>Min</span> 19°C</p>
               </div>
             </div>
             <div class="day">
-              <h3 class="day-name">Friday</h3>
-              <div class="day-weather">
-                <img src="" alt="">
-                <p class="day-temp">24°C</p>
+              <div class="day-info">
+                <img class="day-icon" src="" alt="" />
+                <h3 class="day-name">Friday</h3>
+              </div>
+              <div class="day-temperature">
+                <p class="max-temperature"><span>Max</span> 25°C</p>
+                <p class="min-temperature"><span>Min</span> 18°C</p>
               </div>
             </div>
             <div class="day">
-              <h3 class="day-name">Saturday</h3>
-              <div class="day-weather">
-                <img src="" alt="">
-                <p class="day-temp">22°C</p>
+              <div class="day-info">
+                <img class="day-icon" src="" alt="" />
+                <h3 class="day-name">Saturday</h3>
+              </div>
+              <div class="day-temperature">
+                <p class="max-temperature"><span>Max</span> 26°C</p>
+                <p class="min-temperature"><span>Min</span> 20°C</p>
               </div>
             </div>
             <div class="day">
-              <h3 class="day-name">Sunday</h3>
-              <div class="day-weather">
-                <img src="" alt="">
-                <p class="day-temp">21°C</p>
+              <div class="day-info">
+                <img class="day-icon" src="" alt="" />
+                <h3 class="day-name">Sunday</h3>
+              </div>
+              <div class="day-temperature">
+                <p class="max-temperature"><span>Max</span> 22°C</p>
+                <p class="min-temperature"><span>Min</span> 16°C</p>
               </div>
             </div>
           </div>
-        </div>        
+        </div>
       </main>
       <footer>Build by Lucas-AVS</footer>
     </div>
