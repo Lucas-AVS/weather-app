@@ -33,30 +33,65 @@ const elements = {
   weekDays: document.querySelectorAll(".day"),
 };
 
-api().then(({ data, weatherCondition }) => {
-  console.log(data);
-  console.log("Weather Condition:", weatherCondition);
+api().then(
+  ({ currentData, currentWeatherCondition, forecastData, forecastDays }) => {
+    console.log(currentData);
+    console.log("Weather Condition:", currentWeatherCondition);
+    console.log(forecastData.forecast.forecastday);
+    console.log(forecastDays);
 
-  // Update the UI with the fetched data
-  elements.locationName.textContent = data.location.name;
-  elements.currentDate.textContent = data.location.localtime;
-  elements.weatherIcon.src = getWeatherIcon(data.current.condition.icon);
-  elements.tempValue.textContent = data.current.temp_c + "°C";
-  elements.weatherType.textContent = data.current.condition.text;
-  elements.feelsLikeTemp.textContent =
-    "Feels like " + data.current.feelslike_c + "°C";
-  elements.windSpeed.textContent = getWindDescription(data.current.wind_kph);
+    // Update the UI with the fetched currentData
+    elements.locationName.textContent = currentData.location.name;
+    elements.currentDate.textContent = currentData.location.localtime;
+    elements.weatherIcon.src = getWeatherIcon(
+      currentData.current.condition.icon
+    );
+    elements.tempValue.textContent = currentData.current.temp_c + "°C";
+    elements.weatherType.textContent = currentData.current.condition.text;
+    elements.feelsLikeTemp.textContent =
+      "Feels like " + currentData.current.feelslike_c + "°C";
+    elements.windSpeed.textContent = getWindDescription(
+      currentData.current.wind_kph
+    );
 
-  elements.windDirection.classList.add(
-    `fas`,
-    getWindIconName(data.current.wind_dir)
-  );
+    elements.windDirection.classList.add(
+      `fas`,
+      getWindIconName(currentData.current.wind_dir)
+    );
 
-  elements.windSpeedSpecific.textContent =
-    convertKmhToMs(data.current.wind_kph) + "m/s";
-  elements.humidity.textContent = data.current.humidity + "%";
-  elements.uvIndex.textContent = data.current.uv;
-  elements.visibility.textContent = data.current.vis_km + "km";
-  elements.cloudiness.textContent = data.current.cloud + "%";
-  elements.rainChance.textContent = data.current.precip_mm + "mm";
-});
+    elements.windSpeedSpecific.textContent =
+      convertKmhToMs(currentData.current.wind_kph) + "m/s";
+    elements.humidity.textContent = currentData.current.humidity + "%";
+    elements.uvIndex.textContent = currentData.current.uv;
+    elements.visibility.textContent = currentData.current.vis_km + "km";
+    elements.cloudiness.textContent = currentData.current.cloud + "%";
+    elements.rainChance.textContent = currentData.current.precip_mm + "mm";
+
+    weekForecast(forecastDays);
+  }
+);
+
+function weekForecast(weekDays) {
+  weekDays.forEach((day, index) => {
+    const dayElement = elements.weekDays[index];
+    dayElement.querySelector(".day-name").textContent = dateToWeekDay(day.date);
+    dayElement.querySelector(".day-temp").textContent =
+      day.day.avgtemp_c + "°C";
+    dayElement.querySelector(".day-icon").src = getWeatherIcon(
+      day.day.condition.icon
+    );
+  });
+}
+
+function dateToWeekDay(day) {
+  const days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  return days[new Date(day).getDay()];
+}
