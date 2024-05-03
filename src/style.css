@@ -1,4 +1,326 @@
 * {
-    background-color: rgb(55, 54, 70);
-    color: white;
+    margin: 0;
+    padding: 0;
+
+    background-color: var(--blue900);
+    color: var(--whiteClouds);
+    --whiteClouds: #fffde6;
+    --blue900: #0d2442;
+    --blue500: #7c9fb7;
+    --blue100: #a5ebf9;
+    
+    font-family: "GFS Neohellenic", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+.content {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+header img {
+    width: 120px;
+    height: 120px;
+}
+
+header .search input {
+    all: unset;
+
+    margin-top: 10px;
+    width: 100%;
+    padding: 2px;
+    background-color: var(--whiteClouds);
+    border-radius: 2px;
+
+    color: var(--blue900);
+    font-size: 1.3rem;
+}
+
+header .unit-switch {
+    width: 300px;
+
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+header .unit-switch button {
+    all: unset;
+    margin-top: 5px;
+    border: 0.5px solid var(--whiteClouds);
+    border-radius: 2px;
+    width: 30%;
+    font-size: 1rem;
+
+    display: flex;
+    justify-content: center;
+}
+
+header .unit-switch button .active {
+    background-color: var(--whiteClouds);
+    
+}
+
+header .unit-switch button.active {
+    background-color: var(--whiteClouds);
+    color: var(--blue900);
+}
+
+header .unit-switch button:hover {
+    background-color: var(--blue100);
+    border-color: var(--blue100);
+    color: var(--blue900);
+    cursor: pointer;
+}
+
+.location {
+    margin: 45px auto;
+    width: 80%;
+    text-align: center;
+}
+
+.location h1 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.location h2 {
+    font-size: 1.3rem;
+    font-weight: 400;
+    font-style: italic;
+    margin-top: 5px;
+    color: var(--blue500);
+}
+
+.temperature {
+    display: flex;
+    font-size: 2rem;
+    font-weight: 700;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;;
+}
+
+.temperature img {
+    width: 80px;
+    height: 80px;
+}
+
+
+.additional-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+
+}
+
+.additional-info h2 {
+    font-weight: 700;
+}
+
+.additional-info p {
+    color: var(--blue500);
+}
+
+.specific {
+    margin: 45px 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+    align-items: center;
+    justify-items: center;
+}
+
+.specific p {
+    color: var(--blue500);
+}
+
+.specific .wind-direction {
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+}
+
+.specific div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.forecast {
+    margin: 45px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.forecast h2 {
+    font-weight: 700;
+    margin-bottom: 28px;
+}
+
+.daily-forecast {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+.daily-forecast .day {
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.daily-forecast .day:not(:last-child) {
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--whiteClouds);
+}
+
+.daily-forecast .day .day-info {
+    width: 40%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.daily-forecast .day .day-info img {
+    width: 50px;
+    height: 50px;
+}
+
+footer {
+    padding-bottom: 24px;
+    grid-area: footer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+footer a {
+    font-weight: 700;
+    text-decoration: none;
+}
+
+@media screen and (min-width: 768px) {
+    header {
+        flex-direction: row;
+        margin: 24px;
+    }
+
+    header img {
+        width: 200px;
+        height: 200px;
+    }
+
+    header .search input {
+        all: unset;
+        
+        margin-top: 0;
+        width: 120%;
+        padding: 3px;
+        background-color: var(--whiteClouds);
+        border-radius: 2px;
+    
+        color: var(--blue900);
+        font-size: 1.5rem;
+    }
+    
+    header .unit-switch button {
+        font-size: 1.2rem;
+    }
+
+    .location h1 {
+        font-size: 2.5rem;
+    }
+
+    .location h2 {
+        font-size: 1.5rem;
+    }
+
+    .temperature {
+        font-size: 3rem;
+    }
+
+    .temperature img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .current-weather {
+        display: flex;
+        gap: 50px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .additional-info h2 {
+        font-size: 1.5rem;
+    }
+
+    .additional-info p {
+        font-size: 1.2rem;
+    }
+
+    .specific {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        border-left: solid 1px var(--whiteClouds);
+    }
+
+    .specific p{
+        font-size: 1.2rem;
+    }
+
+    .forecast h2 {
+        font-size: 2rem;
+    }
+
+    .daily-forecast {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .daily-forecast .day {
+        width: 50%;
+        display: flex;
+    }
+
+    .daily-forecast .day .day-info h3 {
+        font-size: 1.5rem;
+    }
+    
+    .daily-forecast .day .day-info img {
+        width: 75px;
+        height: 75px;
+    }
+    
+    .daily-forecast .day .day-temp {
+        font-size: 1.5rem;
+        width: 40%;
+    }
+
+    footer {
+        font-size: 1.2rem;
+    }
 }
