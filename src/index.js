@@ -5,6 +5,7 @@ import {
   convertKmhToMs,
   getWindIconName,
   getWeatherIcon,
+  dateToWeekDay,
 } from "./components/dataTransformer";
 
 import "@fortawesome/fontawesome-free/js/fontawesome";
@@ -35,63 +36,49 @@ const elements = {
 
 api().then(
   ({ currentData, currentWeatherCondition, forecastData, forecastDays }) => {
-    console.log(currentData);
-    console.log("Weather Condition:", currentWeatherCondition);
-    console.log(forecastData.forecast.forecastday);
-    console.log(forecastDays);
-
-    // Update the UI with the fetched currentData
-    elements.locationName.textContent = currentData.location.name;
-    elements.currentDate.textContent = currentData.location.localtime;
-    elements.weatherIcon.src = getWeatherIcon(
-      currentData.current.condition.icon
-    );
-    elements.tempValue.textContent = currentData.current.temp_c + "°C";
-    elements.weatherType.textContent = currentData.current.condition.text;
-    elements.feelsLikeTemp.textContent =
-      "Feels like " + currentData.current.feelslike_c + "°C";
-    elements.windSpeed.textContent = getWindDescription(
-      currentData.current.wind_kph
-    );
-
-    elements.windDirection.classList.add(
-      `fas`,
-      getWindIconName(currentData.current.wind_dir)
-    );
-
-    elements.windSpeedSpecific.textContent =
-      convertKmhToMs(currentData.current.wind_kph) + "m/s";
-    elements.humidity.textContent = currentData.current.humidity + "%";
-    elements.uvIndex.textContent = currentData.current.uv;
-    elements.visibility.textContent = currentData.current.vis_km + "km";
-    elements.cloudiness.textContent = currentData.current.cloud + "%";
-    elements.rainChance.textContent = currentData.current.precip_mm + "mm";
-
+    currentDateDisplay(currentData);
     weekForecast(forecastDays);
   }
 );
+
+function currentDateDisplay(currentDay) {
+  // Update the UI with the fetched currentDay
+  console.log(currentDay.location);
+  elements.locationName.textContent = `${currentDay.location.name}, ${currentDay.location.country}`;
+  elements.currentDate.textContent = currentDay.location.localtime;
+  elements.weatherIcon.src = getWeatherIcon(currentDay.current.condition.icon);
+  elements.tempValue.textContent = currentDay.current.temp_c + "°C";
+  elements.weatherType.textContent = currentDay.current.condition.text;
+  elements.feelsLikeTemp.textContent =
+    "Feels like " + currentDay.current.feelslike_c + "°C";
+  elements.windSpeed.textContent = getWindDescription(
+    currentDay.current.wind_kph
+  );
+
+  elements.windDirection.classList.add(
+    `fas`,
+    getWindIconName(currentDay.current.wind_dir)
+  );
+
+  elements.windSpeedSpecific.textContent =
+    convertKmhToMs(currentDay.current.wind_kph) + "m/s";
+  elements.humidity.textContent = currentDay.current.humidity + "%";
+  elements.uvIndex.textContent = currentDay.current.uv;
+  elements.visibility.textContent = currentDay.current.vis_km + "km";
+  elements.cloudiness.textContent = currentDay.current.cloud + "%";
+  elements.rainChance.textContent = currentDay.current.precip_mm + "mm";
+}
 
 function weekForecast(weekDays) {
   weekDays.forEach((day, index) => {
     const dayElement = elements.weekDays[index];
     dayElement.querySelector(".day-name").textContent = dateToWeekDay(day.date);
-    dayElement.querySelector(".day-temp").textContent =
-      day.day.avgtemp_c + "°C";
+    dayElement.querySelector(".max-temperature").textContent =
+      "Max: " + day.day.maxtemp_c + "°C";
+    dayElement.querySelector(".min-temperature").textContent =
+      "Min: " + day.day.mintemp_c + "°C";
     dayElement.querySelector(".day-icon").src = getWeatherIcon(
       day.day.condition.icon
     );
   });
-}
-
-function dateToWeekDay(day) {
-  const days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
-  return days[new Date(day).getDay()];
 }
