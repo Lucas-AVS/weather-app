@@ -29,8 +29,8 @@ header {
 }
 
 header img {
-    width: 120px;
-    height: 120px;
+    width: 125px;
+    height: 125px;
 }
 
 header .search input {
@@ -43,7 +43,7 @@ header .search input {
     border-radius: 2px;
 
     color: var(--blue900);
-    font-size: 1.3rem;
+    font-size: 1.5rem;
 }
 
 header .unit-switch {
@@ -60,7 +60,7 @@ header .unit-switch button {
     border: 0.5px solid var(--whiteClouds);
     border-radius: 2px;
     width: 30%;
-    font-size: 1rem;
+    font-size: 1.2rem;
 
     display: flex;
     justify-content: center;
@@ -90,12 +90,12 @@ header .unit-switch button:hover {
 }
 
 .location h1 {
-    font-size: 2rem;
+    font-size: 2.2rem;
     font-weight: 700;
 }
 
 .location h2 {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     font-weight: 400;
     font-style: italic;
     margin-top: 5px;
@@ -104,7 +104,7 @@ header .unit-switch button:hover {
 
 .temperature {
     display: flex;
-    font-size: 2rem;
+    font-size: 2.2rem;
     font-weight: 700;
     justify-content: center;
     align-items: center;
@@ -240,23 +240,23 @@ footer a {
         border-radius: 2px;
     
         color: var(--blue900);
-        font-size: 1.5rem;
+        font-size: 1.7rem;
     }
     
     header .unit-switch button {
-        font-size: 1.2rem;
+        font-size: 1.4rem;
     }
 
     .location h1 {
-        font-size: 2.5rem;
+        font-size: 2.7rem;
     }
 
     .location h2 {
-        font-size: 1.5rem;
+        font-size: 1.7rem;
     }
 
     .temperature {
-        font-size: 3rem;
+        font-size: 3.2rem;
     }
 
     .temperature img {
@@ -272,11 +272,11 @@ footer a {
     }
 
     .additional-info h2 {
-        font-size: 1.5rem;
+        font-size: 1.7rem;
     }
 
     .additional-info p {
-        font-size: 1.2rem;
+        font-size: 1.4rem;
     }
 
     .specific {
