@@ -45,3 +45,16 @@ export function convertKmhToMs(windSpeedKmh) {
   // 1 km/h = 0.277778 m/s
   return Math.floor(windSpeedKmh * 0.277778);
 }
+
+export function dateToWeekDay(day) {
+  const days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  return days[new Date(day).getDay()];
+}
