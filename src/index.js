@@ -34,12 +34,43 @@ const elements = {
   weekDays: document.querySelectorAll(".day"),
 };
 
-api().then(
-  ({ currentData, currentWeatherCondition, forecastData, forecastDays }) => {
-    currentDateDisplay(currentData);
-    weekForecast(forecastDays);
-  }
-);
+const searchButton = document.querySelector(".search-submit");
+const searchInput = document.querySelector(".search-input");
+const searchIcon = document.querySelector(".search-submit i");
+
+searchIcon.classList.add("fas");
+searchIcon.classList.add("fa-search");
+
+const main = document.querySelector("main");
+
+function LoadData(location) {
+  api(location)
+    .then(
+      ({
+        currentData,
+        currentWeatherCondition,
+        forecastData,
+        forecastDays,
+      }) => {
+        main.classList.remove("hide");
+        currentDateDisplay(currentData);
+        weekForecast(forecastDays);
+      }
+    )
+    .catch((error) => {
+      alert("Please enter a valid location");
+      // main.classList.add("hide");
+      console.error("Error:", error);
+    });
+}
+// Load the data for Brasilia by default
+LoadData("Brasilia");
+
+searchButton.addEventListener("click", () => {
+  const location = searchInput.value;
+  searchInput.value = "";
+  LoadData(location);
+});
 
 function currentDateDisplay(currentDay) {
   // Update the UI with the fetched currentDay
