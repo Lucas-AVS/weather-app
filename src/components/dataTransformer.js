@@ -58,3 +58,9 @@ export function dateToWeekDay(day) {
   ];
   return days[new Date(day).getDay()];
 }
+
+export function LoadAnimation() {
+  const loader = document.querySelector(".loader");
+  main.classList.add("hide");
+  loader.classList.remove("hide");
+}
