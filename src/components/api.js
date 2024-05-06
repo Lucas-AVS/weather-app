@@ -3,10 +3,10 @@
 export async function api(location) {
   try {
     const fetchCurrent = fetch(
-      `http://api.weatherapi.com/v1/current.json?key=${key}&q=${location}&aqi=yes`
+      `http://api.weatherapi.com/v1/current.json?key=${process.env.API_KEY}&q=${location}&aqi=yes`
     );
     const fetchForecast = fetch(
-      `http://api.weatherapi.com/v1/forecast.json?key=${{ secrets.API_KEY }}&q=${location}&days=7`
+      `http://api.weatherapi.com/v1/forecast.json?key=${process.env.API_KEY}&q=${location}&days=7`
     );
 
     const [currentResponse, forecastResponse] = await Promise.all([
