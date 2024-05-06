@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --progress --profile",
-    "watch": "webpack --progress --profile --watch"
+    "watch": "webpack --progress --profile --watch",
+    "deploy": "gh-pages -d dist"
   },
   "keywords": [],
   "author": "",
@@ -14,6 +15,7 @@
   "devDependencies": {
     "css-loader": "^6.10.0",
     "file-loader": "^6.2.0",
+    "gh-pages": "^6.1.1",
     "style-loader": "^3.3.4",
     "webpack": "^5.90.3",
     "webpack-cli": "^5.1.4"
