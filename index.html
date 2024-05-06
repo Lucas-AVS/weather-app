@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=GFS+Neohellenic:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script defer src="main.js"></script>
+    <title>Weather app</title>
+  </head>
+  <body>
+    <div class="content">
+      <header>
+        <img src="../src/assets/custom-images/weather-icon.jpeg" alt="" />
+        <form class="search" action="#" method="get">
+          <input
+            type="text"
+            class="search-input"
+            placeholder="Search locations"
+          />
+          <button class="search-submit" type="submit">
+            <i class=""></i>
+          </button>
+        </form>
+        <div class="unit-switch">
+          <button class="celsius active">Celsius</button>
+          <button class="fahrenheit">Fahrenheit</button>
+        </div>
+      </header>
+      <main class="main">
+        <div class="location">
+          <h1 class="location-name"></h1>
+          <h2 class="current-date"></h2>
+        </div>
+        <div class="current-weather">
+          <div class="general-info">
+            <div class="temperature">
+              <img src="" alt="" />
+              <h2 class="temp-value"></h2>
+            </div>
+            <div class="additional-info">
+              <div class="weather-description">
+                <h2 class="weather-type"></h2>
+              </div>
+              <div class="feels-like">
+                <p class="feels-like-temp"></p>
+              </div>
+              <div class="wind-info">
+                <p class="wind-speed"></p>
+              </div>
+            </div>
+          </div>
+          <div class="specific">
+            <div class="wind-speed">
+              <p>Wind</p>
+              <div class="wind-direction">
+                <i class="fas fa-long-arrow-up"></i>
+                <h2></h2>
+              </div>
+            </div>
+            <div class="humidity">
+              <p>Humidity</p>
+              <h2></h2>
+            </div>
+            <div class="uv-index">
+              <p>UV index</p>
+              <h2></h2>
+            </div>
+            <div class="visibility">
+              <p>Visibility</p>
+              <h2></h2>
+            </div>
+            <div class="cloudiness">
+              <p>Cloudiness</p>
+              <h2></h2>
+            </div>
+            <div class="rain-chance">
+              <p>Chance of rain</p>
+              <h2></h2>
+            </div>
+          </div>
+        </div>
+        <div class="forecast">
+          <h2>Weekly Forecast</h2>
+          <div class="daily-forecast">
+            <div class="day">
+              <div class="day-info">
+                <h3 class="day-name"></h3>
+                <img class="day-icon" src="" alt="" />
+              </div>
+              <div class="day-temp">
+                <p class="max-temperature"></p>
+                <p class="min-temperature"></p>
+              </div>
+            </div>
+            <div class="day">
+              <div class="day-info">
+                <h3 class="day-name"></h3>
+                <img class="day-icon" src="" alt="" />
+              </div>
+              <div class="day-temp">
+                <p class="max-temperature"></p>
+                <p class="min-temperature"></p>
+              </div>
+            </div>
+            <div class="day">
+              <div class="day-info">
+                <h3 class="day-name"></h3>
+                <img class="day-icon" src="" alt="" />
+              </div>
+              <div class="day-temp">
+                <p class="max-temperature"></p>
+                <p class="min-temperature"></p>
+              </div>
+            </div>
+            <div class="day">
+              <div class="day-info">
+                <h3 class="day-name"></h3>
+                <img class="day-icon" src="" alt="" />
+              </div>
+              <div class="day-temp">
+                <p class="max-temperature"></p>
+                <p class="min-temperature"></p>
+              </div>
+            </div>
+            <div class="day">
+              <div class="day-info">
+                <h3 class="day-name"></h3>
+                <img class="day-icon" src="" alt="" />
+              </div>
+              <div class="day-temp">
+                <p class="max-temperature"></p>
+                <p class="min-temperature"></p>
+              </div>
+            </div>
+            <div class="day">
+              <div class="day-info">
+                <h3 class="day-name"></h3>
+                <img class="day-icon" src="" alt="" />
+              </div>
+              <div class="day-temp">
+                <p class="max-temperature"></p>
+                <p class="min-temperature"></p>
+              </div>
+            </div>
+            <div class="day">
+              <div class="day-info">
+                <h3 class="day-name"></h3>
+                <img class="day-icon" src="" alt="" />
+              </div>
+              <div class="day-temp">
+                <p class="max-temperature"></p>
+                <p class="min-temperature"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer>Build by&nbsp <a href="">Lucas-AVS</a></footer>
+    </div>
+  </body>
+</html>
