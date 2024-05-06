@@ -16,19 +16,22 @@
     <div class="content">
       <header>
         <img src="../src/assets/custom-images/weather-icon.jpeg" alt="" />
-        <div class="search">
+        <form class="search" action="#" method="get">
           <input
             type="text"
-            class="search-bar"
+            class="search-input"
             placeholder="Search locations"
           />
-        </div>
+          <button class="search-submit" type="submit">
+            <i class=""></i>
+          </button>
+        </form>
         <div class="unit-switch">
           <button class="celsius active">Celsius</button>
           <button class="fahrenheit">Fahrenheit</button>
         </div>
       </header>
-      <main>
+      <main class="main">
         <div class="location">
           <h1 class="location-name"></h1>
           <h2 class="current-date"></h2>
