@@ -1,4 +1,4 @@
-// import { key } from "./keys.json";
+import { key } from "./keys.json";
 
 export async function api(location) {
   try {
@@ -6,7 +6,7 @@ export async function api(location) {
       `http://api.weatherapi.com/v1/current.json?key=${key}&q=${location}&aqi=yes`
     );
     const fetchForecast = fetch(
-      `http://api.weatherapi.com/v1/forecast.json?key=${{ secrets.API_KEY }}&q=${location}&days=7`
+      `http://api.weatherapi.com/v1/forecast.json?key=${key}&q=${location}&days=7`
     );
 
     const [currentResponse, forecastResponse] = await Promise.all([
