@@ -1,21 +1,22 @@
 import { key } from "./keys.json";
 
-//   const currentLocation = document.querySelector(".location-name");
-const currentLocation = "brasília";
-
-export async function api() {
+export async function api(location) {
   try {
     const fetchCurrent = fetch(
-      `http://api.weatherapi.com/v1/current.json?key=${key}&q=${currentLocation}&aqi=yes`
+      `http://api.weatherapi.com/v1/current.json?key=${key}&q=${location}&aqi=yes`
     );
     const fetchForecast = fetch(
-      `http://api.weatherapi.com/v1/forecast.json?key=${key}&q=${currentLocation}&days=7`
+      `http://api.weatherapi.com/v1/forecast.json?key=${key}&q=${location}&days=7`
     );
 
     const [currentResponse, forecastResponse] = await Promise.all([
       fetchCurrent,
       fetchForecast,
     ]);
+
+    if (!currentResponse.ok || !forecastResponse.ok) {
+      throw new Error("Network response was not ok");
+    }
 
     const currentData = await currentResponse.json();
     const forecastData = await forecastResponse.json();
