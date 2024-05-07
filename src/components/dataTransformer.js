@@ -38,7 +38,7 @@ export function getWindIconName(windDirection) {
 
 export function getWeatherIcon(iconUrl) {
   const relativePath = iconUrl.split(".com").pop().split(".")[0];
-  return `../src/assets${relativePath}.png`;
+  return `./assets${relativePath}.png`;
 }
 
 export function convertKmhToMs(windSpeedKmh) {
